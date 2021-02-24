@@ -21,14 +21,26 @@ Visualizzare a schermo il paragrafo con la relativa lunghezza e sostituire la ba
     // puoi commentare all'interno dei tag php e non si vedranno nel inspector usando il // or
     # hashtag or
     /* come nel css */
-    $badword = $_GET['badword'];
-    echo "'$string'";
-    $daSostituire echo strpos($string, 'about');
-    echo str_replace($string,$daSostituire,'test'); ?>
-    is <?php echo strlen($string); ?> characters long.
+    echo $string; // stampiamo a video la stringa
+    $badword = $_GET['badword']; // ci salviamo il valore dalla chiave badword digitando nel url badword=sth , il sth sarà il valore di $badword
+    // echo strpos($string, $badword);
+    //col medoto str_replace sostituiamo il valore $badword con *** dalla $string e salviamo il tutto in $fraseCensurata
+    $fraseCensurata = str_replace($badword,'***',$string);
+    ?>
+
+    is <?php
+    # metodo per conoscere la lunghezza della stringa
+    echo strlen($string); ?> characters long.
+  </p>
+  <p>
+    <?php echo $fraseCensurata; // la stampiamo a video ?>
+    ---> Dopo la censura  la lunghezza è
+    <?php echo strlen($fraseCensurata); ?>
   </p>
 
-  <?php var_dump($_GET); ?>
+  <?php
+  # stampa a video l'array Get
+  // var_dump($_GET); ?>
 
 
 
