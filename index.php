@@ -15,28 +15,24 @@ Visualizzare a schermo il paragrafo con la relativa lunghezza e sostituire la ba
 </head>
 <body>
   <!-- php -->
-  
+
   <p>
     the string <?php
-    $about = $_GET['badword'];
-    echo "'$string'"; ?>
+    // puoi commentare all'interno dei tag php e non si vedranno nel inspector usando il // or
+    # hashtag or
+    /* come nel css */
+    $badword = $_GET['badword'];
+    echo "'$string'";
+    $daSostituire echo strpos($string, 'about');
+    echo str_replace($string,$daSostituire,'test'); ?>
     is <?php echo strlen($string); ?> characters long.
   </p>
 
-  <?php var_dump($string); ?>
-  <br>
   <?php var_dump($_GET); ?>
 
 
 
 
-  <!-- <h1>Ciao il mio nome è <?php
-    $nome = $_GET['name'];
-    echo $nome;
-    echo $_GET['eta']; ?>
-  </h1>
-  <h2><?php echo $_GET['eta']?></h2>
 
-<?php var_dump($_GET); ?> -->
 </body>
 </html>
